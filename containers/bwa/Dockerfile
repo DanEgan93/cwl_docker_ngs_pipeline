@@ -1,8 +1,5 @@
 # A dockerfile to generate a dockerised version of bwa
 
-# processes within all containers should NOT be run as root
-# TODO create user to run commands in containers
-
 ## Base image
 FROM alpine:3.7
 
