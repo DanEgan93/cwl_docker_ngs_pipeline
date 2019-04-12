@@ -1,9 +1,5 @@
 # A dockerfile to generate a dockerised version of Trimmomatic
 
-# processes within all containers should NOT be run as root
-# TODO create user to run commands in containers
-# need to add the adapater sequences from trimmoatic/adapters/nextera into a loction accessible to the program inside the container
-
 ## Base image
 FROM alpine:3.7
 
@@ -16,7 +12,7 @@ RUN apk --update add openjdk7-jre \
 	&& unzip /tmp/trimmomatic-0.38.zip -d /usr/local/pipeline \
 	&& chmod 755 /usr/local/pipeline/
 
- 
+
 RUN addgroup -S pipe \
 	&& adduser -D pipeman -G pipe
 
